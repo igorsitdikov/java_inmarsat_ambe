@@ -1,0 +1,10 @@
+*.o
+*_wrap.cpp
+.idea
+*.a
+target
+build
+.wav
+.iml
+gradle
+.gradle

@@ -1,4 +1,4 @@
-%module aero_ambe
+%module inmarsatAmbe
 
 %include <typemaps.i>
 %include <std_string.i>
@@ -9,11 +9,11 @@
 
 %pragma(java) jniclasscode=%{
     static {
-         System.loadLibrary("inmarsat");
+         boolean embeddedLibrary = EmbeddedLibraryTools.LOADED_EMBEDDED_LIBRARY;
     }
 %}
 
 %{
-#include "inmarsat.h"
+#include "native/inmarsat.h"
 %}
-%include "inmarsat.h"
+%include "native/inmarsat.h"

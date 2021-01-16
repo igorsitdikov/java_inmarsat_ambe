@@ -31,13 +31,13 @@ private:
     mbe_parms prev;
     mbe_parms prev_mp_enhanced;
     unsigned char decoded_data[320];
+    void to_decode_slot(const char * datas, int size);
     
     /* data */
 public:
     
     Inmarsat();
     ~Inmarsat();
-    void to_decode_slot(const char * datas, int size);
-    void to_decode_all(const char * datas, int size, char* result);
+    void decode(const char * datas, int size, char* result);
 };
 

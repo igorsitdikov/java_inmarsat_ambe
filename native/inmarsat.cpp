@@ -52,7 +52,7 @@ void Inmarsat::to_decode_slot(const char * datas, int size){
     }
 }
 
-void Inmarsat::to_decode_all(const char * datas, int size, char* result){
+void Inmarsat::decode(const char * datas, int size, char* result){
     errors = 0;
     errors2 = 0;
     char buf[size];

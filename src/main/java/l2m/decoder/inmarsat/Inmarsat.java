@@ -6,6 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
+package l2m.decoder.inmarsat;
 
 public class Inmarsat {
   private transient long swigCPtr;
@@ -28,22 +29,18 @@ public class Inmarsat {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        aero_ambeJNI.delete_Inmarsat(swigCPtr);
+        inmarsatAmbeJNI.delete_Inmarsat(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public Inmarsat() {
-    this(aero_ambeJNI.new_Inmarsat(), true);
+    this(inmarsatAmbeJNI.new_Inmarsat(), true);
   }
 
-  public void to_decode_slot(byte[] datas, int size) {
-    aero_ambeJNI.Inmarsat_to_decode_slot(swigCPtr, this, datas, size);
-  }
-
-  public void to_decode_all(byte[] datas, int size, byte[] result) {
-    aero_ambeJNI.Inmarsat_to_decode_all(swigCPtr, this, datas, size, result);
+  public void decode(byte[] datas, int size, byte[] result) {
+    inmarsatAmbeJNI.Inmarsat_decode(swigCPtr, this, datas, size, result);
   }
 
 }

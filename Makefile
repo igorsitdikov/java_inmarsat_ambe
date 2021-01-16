@@ -44,6 +44,8 @@ copy:
 	mkdir -p $(OUTPUT_PATH)
 	strip -g $(TARGET)
 	cp $(TARGET) $(OUTPUT_PATH)
+	chmod +x copy_dependencies.sh
+	./copy_dependencies.sh $(TARGET) $(OUTPUT_PATH)
 
 $(TARGET): inmarsat_wrap.cpp native/inmarsat.cpp native/mbelib.h libmbe.a
 	$(CXX) $(CXXFLAGS) -shared -o $@ $^ $(LIBS)
